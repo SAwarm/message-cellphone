@@ -40,18 +40,24 @@ class ChatBotController extends Controller
         // }
         // return;
 
-        $message = "1- nome\n";
+        $message = "1- nome do pai\n";
 
-        $message .= "2- retorno teste";
+        $message .= "2- nome da mãe\n";
+
+        $message .= "3- nome próprio\n";
 
         $this->action = $body;
 
         if ($this->action == 1) {
-            return $this->sendWhatsAppMessage('nome', $from);
+            return $this->sendWhatsAppMessage('Joe da Rosa Elias', $from);
         }
 
         if ($this->action == 2) {
-            return $this->sendWhatsAppMessage('retorno teste', $from);
+            return $this->sendWhatsAppMessage('Adriana Ramos da Silva Elias', $from);
+        }
+
+        if ($this->action == 3) {
+            return $this->sendWhatsAppMessage('Jonas da Silva Elias', $from);
         }
 
         $this->sendWhatsAppMessage($message, $from);
